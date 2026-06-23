@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+<button class="back-btn" onclick="location.href='index.php'">← BACK</button>
+<div class="register-container">
+    <h1>Create Character</h1>
+    
+    <form action="process_register.php" method="POST">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <div class="section">
+            <p>Gender</p>
+            <div class="gender-container">
+                <div class="gender-card selected" data-value="male" onclick="selectGender(this)">Male</div>
+                <div class="gender-card" data-value="female" onclick="selectGender(this)">Female</div>
+            </div>
+            <input type="hidden" name="gender" id="genderInput">
+        </div>
+
+<div class="section">
+    <p>Choose Class</p>
+    <div class="class-container">
+        
+        <div class="class-card selected" data-value="warrior" onclick="selectClass(this)">
+    <div id="warriorSprite" class="pixel-sprite pixel-warrior-male"></div>
+    <span>Warrior</span>
+</div>
+
+        <div class="class-card" data-value="ranger" onclick="selectClass(this)">
+            <div id="rangerSprite" class="pixel-sprite pixel-ranger-male"></div>
+            <span>Ranger</span>
+        </div>
+
+        <div class="class-card" data-value="wizard" onclick="selectClass(this)">
+            <div id="wizardSprite" class="pixel-sprite pixel-wizard-male"></div>
+            <span>Wizard</span>
+        </div>
+
+    </div>
+<input type="hidden" name="gender" id="genderInput" value="male">
+<input type="hidden" name="class" id="classInput" value="warrior">
+</div>
+        <button type="submit" class="register-btn">REGISTER</button>
+    </form>
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>
